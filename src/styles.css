@@ -1,0 +1,147 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * TILETA design system — campus delivery marketplace
+ * Inspired by Amazon: deep navy navigation, orange action color, light surfaces,
+ * dense product grids. Uses oklch only.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-nav: var(--nav);
+  --color-nav-foreground: var(--nav-foreground);
+  --color-nav-accent: var(--nav-accent);
+  --color-price: var(--price);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Surfaces */
+  --background: oklch(0.985 0 0);                /* near white */
+  --foreground: oklch(0.18 0.02 250);            /* deep navy text */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 250);
+
+  /* Brand: TILETA orange */
+  --primary: oklch(0.78 0.18 60);                /* #FF9900-ish */
+  --primary-foreground: oklch(0.18 0.02 250);
+
+  --secondary: oklch(0.96 0.005 250);
+  --secondary-foreground: oklch(0.18 0.02 250);
+
+  --muted: oklch(0.95 0.005 250);
+  --muted-foreground: oklch(0.48 0.02 250);
+
+  --accent: oklch(0.93 0.04 60);                 /* warm cream */
+  --accent-foreground: oklch(0.18 0.02 250);
+
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --success: oklch(0.62 0.16 150);
+  --success-foreground: oklch(0.99 0 0);
+
+  --warning: oklch(0.78 0.16 80);
+  --warning-foreground: oklch(0.18 0.02 250);
+
+  --border: oklch(0.9 0.005 250);
+  --input: oklch(0.92 0.005 250);
+  --ring: oklch(0.78 0.18 60);
+
+  /* Navigation (Amazon-like dark bar) */
+  --nav: oklch(0.22 0.025 250);                  /* #131921 deep navy */
+  --nav-foreground: oklch(0.98 0 0);
+  --nav-accent: oklch(0.32 0.03 250);            /* hover */
+
+  --price: oklch(0.55 0.22 25);                  /* deal red */
+
+  /* Gradients */
+  --gradient-cta: linear-gradient(180deg, oklch(0.86 0.15 70), oklch(0.74 0.18 55));
+  --gradient-hero: linear-gradient(135deg, oklch(0.22 0.025 250), oklch(0.32 0.04 250));
+
+  /* Shadow */
+  --shadow-card: 0 1px 2px oklch(0.18 0.02 250 / 0.08), 0 4px 12px oklch(0.18 0.02 250 / 0.06);
+  --shadow-pop: 0 10px 30px oklch(0.18 0.02 250 / 0.18);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 250);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.2 0.02 250);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.2 0.02 250);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.78 0.18 60);
+  --primary-foreground: oklch(0.18 0.02 250);
+  --secondary: oklch(0.26 0.02 250);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.26 0.02 250);
+  --muted-foreground: oklch(0.72 0.02 250);
+  --accent: oklch(0.3 0.04 60);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --success: oklch(0.65 0.16 150);
+  --success-foreground: oklch(0.99 0 0);
+  --warning: oklch(0.78 0.16 80);
+  --warning-foreground: oklch(0.18 0.02 250);
+  --border: oklch(1 0 0 / 0.12);
+  --input: oklch(1 0 0 / 0.15);
+  --ring: oklch(0.78 0.18 60);
+  --nav: oklch(0.14 0.02 250);
+  --nav-foreground: oklch(0.98 0 0);
+  --nav-accent: oklch(0.26 0.03 250);
+  --price: oklch(0.7 0.22 25);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-nav { background-color: var(--color-nav); color: var(--color-nav-foreground); }
+  .bg-cta { background-image: var(--gradient-cta); color: var(--color-primary-foreground); }
+  .bg-hero { background-image: var(--gradient-hero); color: var(--color-nav-foreground); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-pop { box-shadow: var(--shadow-pop); }
+  .text-price { color: var(--color-price); }
+}
