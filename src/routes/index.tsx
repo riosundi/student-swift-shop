@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
-import { Bike, ShoppingBag, Store, Wallet, Shield, Zap } from "lucide-react";
+import { Bike, ShoppingBag, Store, Wallet, Shield, Zap, Phone, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -98,8 +98,22 @@ function Landing() {
         </div>
       </section>
 
-      <footer className="bg-nav py-8 text-center text-sm text-[var(--color-nav-foreground)]/70">
-        © {new Date().getFullYear()} TILETA. Built for campus.
+      <footer className="bg-nav py-8 text-sm text-[var(--color-nav-foreground)]/70">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p>© {new Date().getFullYear()} TILETA. Built for campus.</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-[var(--color-primary)]" />
+                <span>Owner: Um. Hamoonga — WhatsApp 0773405474</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-4 w-4 text-[var(--color-primary)]" />
+                <span>Tech: R.I.O Sundi — +212684728311</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
