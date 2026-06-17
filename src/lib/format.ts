@@ -1,9 +1,6 @@
+// Zambian Kwacha formatter (kept as `ngn` for backwards compatibility across the app).
 export const ngn = (amount: number | string | null | undefined): string => {
   const n = typeof amount === "string" ? Number(amount) : (amount ?? 0);
-  if (!Number.isFinite(n)) return "₦0";
-  return new Intl.NumberFormat("en-NG", {
-    style: "currency",
-    currency: "NGN",
-    maximumFractionDigits: 0,
-  }).format(n);
+  if (!Number.isFinite(n)) return "K0";
+  return `K${new Intl.NumberFormat("en-ZM", { maximumFractionDigits: 2 }).format(n)}`;
 };
