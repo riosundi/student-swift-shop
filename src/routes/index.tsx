@@ -103,14 +103,24 @@ function Landing() {
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p>© {new Date().getFullYear()} TILETA. Built for campus.</p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-              <div className="flex items-center gap-2">
+              <a
+                href="https://wa.me/260773405474"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 transition-colors hover:text-[var(--color-nav-foreground)]"
+              >
                 <Phone className="h-4 w-4 text-[var(--color-primary)]" />
                 <span>Owner: Um. Hamoonga — WhatsApp 0773405474</span>
-              </div>
-              <div className="flex items-center gap-2">
+              </a>
+              <a
+                href="https://wa.me/212684728311"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 transition-colors hover:text-[var(--color-nav-foreground)]"
+              >
                 <MessageCircle className="h-4 w-4 text-[var(--color-primary)]" />
                 <span>Tech: R.I.O Sundi — +212684728311</span>
-              </div>
+              </a>
             </div>
           </div>
         </div>
