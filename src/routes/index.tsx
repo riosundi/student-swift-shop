@@ -123,6 +123,9 @@ function Landing() {
               </a>
             </div>
           </div>
+          <p className="mt-4 text-center text-xs text-[var(--color-nav-foreground)]/50 sm:text-right">
+            We typically reply on WhatsApp within a few minutes during campus hours (08:00–20:00 CAT).
+          </p>
         </div>
       </footer>
     </div>
