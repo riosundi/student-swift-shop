@@ -37,7 +37,7 @@ export const placeOrder = createServerFn({ method: "POST" })
     const { data: wallet } = await supabase.from("wallets").select("balance").eq("user_id", userId).single();
     const bal = Number(wallet?.balance ?? 0);
     if (bal < total) {
-      throw new Error(`Insufficient wallet balance. Need ₦${total}, have ₦${bal}. Top up your wallet first.`);
+      throw new Error(`Insufficient wallet balance. Need K${total}, have K${bal}. Top up your wallet first.`);
     }
 
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -173,7 +173,7 @@ export const confirmReceived = createServerFn({ method: "POST" })
         amount: agentPayout,
         kind: "payout",
         order_id: ord.id,
-        note: `Refund ₦${itemsTotal} + delivery share ₦${deliveryFee - commission}`,
+        note: `Refund K${itemsTotal} + delivery share K${deliveryFee - commission}`,
       },
     ]);
 

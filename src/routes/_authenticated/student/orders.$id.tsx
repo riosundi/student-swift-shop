@@ -99,7 +99,7 @@ function OrderDetail() {
         <Card className="mt-3 border-success p-4">
           <h2 className="font-semibold">Confirm receipt?</h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Tap this only after you've received your items. This releases ₦{Number(order.items_total) + (Number(order.delivery_fee) - Number(order.commission))} to your agent.
+            Tap this only after you've received your items. This releases K{Number(order.items_total) + (Number(order.delivery_fee) - Number(order.commission))} to your agent.
           </p>
           <Button
             className="mt-3 bg-success text-success-foreground hover:opacity-90"

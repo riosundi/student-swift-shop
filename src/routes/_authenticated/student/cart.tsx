@@ -139,7 +139,7 @@ function CartPage() {
               <Input id="notes" value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Call when you arrive" />
             </div>
             <div>
-              <Label htmlFor="fee">Delivery fee you'll pay (₦)</Label>
+              <Label htmlFor="fee">Delivery fee you'll pay (K)</Label>
               <Input id="fee" type="number" min={100} step={50} value={fee} onChange={(e) => setFee(Number(e.target.value) || 0)} />
               <p className="mt-1 text-xs text-muted-foreground">Higher fee = faster claim by an agent.</p>
             </div>
